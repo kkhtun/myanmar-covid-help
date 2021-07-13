@@ -3,6 +3,14 @@
   color: rgb(188, 190, 200);
   padding: 0.5rem 0rem 0.5rem 1rem;
   border-bottom: 1px solid slategray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.today > h2 span:last-child {
+  font-size: 60%;
+  text-align: right;
+  flex: 0 1 40%;
 }
 .today-stats {
   display: flex;
@@ -116,6 +124,45 @@
 @media screen and (max-width: 500px) {
   .total-card {
     flex: 0 0 98%;
+    margin: 1% auto;
+  }
+}
+/* End Total Stats Styles */
+
+/*Start Additional Stats Styles */
+.additional > h2 {
+  color: rgb(188, 190, 200);
+  padding: 0.5rem 0rem 0.5rem 1rem;
+  border-bottom: 1px solid slategray;
+}
+.additional-stats {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.additional-card {
+  color: rgba(121, 253, 209, 0.8);
+  font-size: 80%;
+  margin-bottom: 1%;
+  border-left: 5px solid greenyellow;
+  flex: 0 1 24%;
+}
+.additional-card pre {
+  font-size: 1.3rem;
+  color: rgb(193, 240, 240);
+}
+.additional-card-inner-wrapper {
+  padding: 0% 5%;
+}
+@media screen and (max-width: 1100px) and (min-width: 501px) {
+  .additional-card {
+    flex: 0 1 48%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .additional-card {
+    flex: 0 1 98%;
     margin: 1% auto;
   }
 }

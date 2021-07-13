@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import TodayStats from "../TodayStats";
 import Loading from "../../assets/images/Loading.gif";
+import TodayStats from "../TodayStats";
 import TotalStats from "../TotalStats";
+import AdditionalStats from "../AdditionalStats";
 const MainPage = () => {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -14,7 +15,6 @@ const MainPage = () => {
       .then((data) => {
         setData(data);
         setIsLoading(false);
-        console.log(data);
       })
       .catch((err) => console.error(err));
   }, []);
@@ -27,6 +27,7 @@ const MainPage = () => {
         <>
           <TodayStats data={data} />
           <TotalStats data={data} />
+          <AdditionalStats data={data} />
         </>
       )}
     </>

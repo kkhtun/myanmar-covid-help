@@ -6,7 +6,7 @@ const TodayCard = ({ title, numberData }) => {
       <div className="today-card-inner-wrapper">
         <h2>Today {title}</h2>
         <pre>
-          <CountUp end={numberData} />
+          <CountUp end={numberData} duration={2.5} />
         </pre>
       </div>
     </article>

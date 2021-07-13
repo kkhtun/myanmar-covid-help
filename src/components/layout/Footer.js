@@ -12,7 +12,9 @@ const Footer = () => {
         (disease.sh Docs - A third-party open API for disease-related
         statistics)
       </section>
-      <section>Last Updated Today</section>
+      <section>
+        Developed by <a href="https://github.com/kkhtun">Khaing Khant Htun</a>
+      </section>
     </footer>
   );
 };

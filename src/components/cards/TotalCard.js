@@ -6,7 +6,7 @@ const TotalCard = ({ title, numberData }) => {
       <div className="total-card-inner-wrapper">
         <h2>Total {title}</h2>
         <pre>
-          <CountUp end={numberData} />
+          <CountUp end={numberData} duration={3} />
         </pre>
       </div>
     </article>
