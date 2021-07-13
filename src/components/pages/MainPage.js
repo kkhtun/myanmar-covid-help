@@ -14,6 +14,7 @@ const MainPage = () => {
       .then((data) => {
         setData(data);
         setIsLoading(false);
+        console.log(data);
       })
       .catch((err) => console.error(err));
   }, []);
