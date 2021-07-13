@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import CountUp from "react-countup";
 const TotalCard = ({ title, numberData }) => {
   return (
