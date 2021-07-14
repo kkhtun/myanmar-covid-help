@@ -1,20 +1,15 @@
-// Layout Imports
-import Navbar from "./components/layout/Navbar";
-import MainWrapper from "./components/layout/MainWrapper";
-import Footer from "./components/layout/Footer";
-import { ApiContextProvider } from "./components/context/ApiContext";
-// Pages Import
-import MainPage from "./components/pages/MainPage";
-
+import {
+  ApiContextProvider,
+  ChartContextProvider,
+} from "./components/context/ApiContext";
+import AppWithRoutes from "./AppWithRoutes";
 function App() {
   return (
     <div className="App">
       <ApiContextProvider>
-        <Navbar />
-        <MainWrapper>
-          <MainPage />
-        </MainWrapper>
-        <Footer />
+        <ChartContextProvider>
+          <AppWithRoutes />
+        </ChartContextProvider>
       </ApiContextProvider>
     </div>
   );

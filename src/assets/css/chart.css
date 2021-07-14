@@ -1,0 +1,28 @@
+.charts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.charts > * {
+  flex: 0 1 45%;
+  margin: 5% auto;
+}
+.cases-death-chart .wrapper {
+  width: 40vw;
+  height: 30vw;
+}
+@media screen and (max-width: 1100px) {
+  .cases-death-chart .wrapper {
+    width: 80vw;
+    height: 60vw;
+  }
+  .charts > * {
+    flex: 0 1 90%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .charts > * {
+    flex: 0 1 90%;
+  }
+}
