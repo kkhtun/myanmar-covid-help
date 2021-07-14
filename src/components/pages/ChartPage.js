@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import Loading from "../../assets/images/Loading.gif";
 import { ChartContext } from "../context/ApiContext";
 
 // Import Charts
@@ -7,9 +8,13 @@ import Chart from "../charts/Chart";
 const ChartPage = () => {
   const { isLoading, chartData } = useContext(ChartContext);
   return (
-    <div className="charts">
+    <>
+      {isLoading && (
+        <img src={Loading} alt="Fetching Data..." className="loading" />
+      )}
+
       {chartData && !isLoading && (
-        <>
+        <div className="charts">
           <Chart
             label="Cases"
             rgbString="rgba(245, 229, 27, 0.8)"
@@ -25,9 +30,9 @@ const ChartPage = () => {
             rgbString="rgba(46,204,113,0.8)"
             chartData={chartData.timeline.recovered}
           />
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 };
 
