@@ -16,17 +16,17 @@ const ChartPage = () => {
       {chartData && !isLoading && (
         <div className="charts">
           <Chart
-            label="Cases"
+            label="Cases for last 30 days"
             rgbString="rgba(245, 229, 27, 0.8)"
             chartData={chartData.timeline.cases}
           />
           <Chart
-            label="Deaths"
+            label="Deaths for last 30 days"
             rgbString="rgba(234, 83, 42, 0.8)"
             chartData={chartData.timeline.deaths}
           />
           <Chart
-            label="Recovered"
+            label="Recovered for last 30 days"
             rgbString="rgba(46,204,113,0.8)"
             chartData={chartData.timeline.recovered}
           />
