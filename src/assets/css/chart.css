@@ -8,12 +8,13 @@
   flex: 0 1 45%;
   margin: 5% auto;
 }
-.cases-death-chart .wrapper {
+.single-chart .wrapper {
   width: 40vw;
   height: 30vw;
+  margin: auto;
 }
 @media screen and (max-width: 1100px) {
-  .cases-death-chart .wrapper {
+  .single-chart .wrapper {
     width: 80vw;
     height: 60vw;
   }

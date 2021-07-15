@@ -1,7 +1,7 @@
 import React from "react";
 import { Line, Chart } from "react-chartjs-2";
 import { formatDays, formatData } from "../helpers/ChartHelper";
-const CasesDeathsChart = ({ label, chartData, rgbString }) => {
+const LineChart = ({ label, chartData, rgbString }) => {
   // Can be run only once for days
   const formattedDays = formatDays(chartData);
 
@@ -27,7 +27,7 @@ const CasesDeathsChart = ({ label, chartData, rgbString }) => {
     maintainAspectRatio: false,
   };
   return (
-    <div className="cases-death-chart">
+    <div className="single-chart">
       <div className="wrapper">
         <Line data={data} options={options} />
       </div>
@@ -35,4 +35,4 @@ const CasesDeathsChart = ({ label, chartData, rgbString }) => {
   );
 };
 
-export default CasesDeathsChart;
+export default LineChart;
