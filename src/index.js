@@ -5,6 +5,7 @@ import ReactDOM from "react-dom";
 import "./assets/css/layout.css";
 import "./assets/css/index.css";
 import "./assets/css/chart.css";
+import "./assets/css/services.css";
 
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";

@@ -1,5 +1,6 @@
 /* Start Today Stats */
-.today > h2 {
+.today > h2,
+.services-heading {
   color: rgb(188, 190, 200);
   padding: 0.5rem 0rem 0.5rem 1rem;
   border-bottom: 1px solid slategray;

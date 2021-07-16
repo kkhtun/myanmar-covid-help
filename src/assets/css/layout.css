@@ -13,11 +13,15 @@ body {
   padding: 0% 1%;
   border-radius: 5px;
   background-color: #29324f;
-  color: rgb(194, 196, 207);
+  color: rgb(197, 199, 211);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+}
+.nav-container h1 {
+  color: azure;
+  font-weight: 600;
 }
 .nav-link {
   border: 1px solid #1a2340;
@@ -26,13 +30,15 @@ body {
   color: rgb(119, 130, 158);
   padding: 0.5rem 3rem;
 }
-.nav-link:first-child {
+.nav-container .nav-link:first-child {
   border-radius: 5px 0px 0px 5px;
 }
-.nav-link:last-child {
+.nav-container .nav-link:last-child {
   border-radius: 0px 5px 5px 0px;
 }
-.nav-active {
+.nav-active,
+.nav-link:hover,
+.nav-link:focus {
   background-color: #161d2d;
   color: rgb(201, 208, 228);
 }
@@ -81,6 +87,12 @@ footer a {
   .nav-container {
     padding: 0% 0% 5% 0%;
     justify-content: center;
+  }
+  .nav-link {
+    padding: 0.5rem 2rem;
+  }
+  .nav-link:first-child {
+    padding: 0.5rem 1.6rem;
   }
   footer {
     margin: 5% 2%;
