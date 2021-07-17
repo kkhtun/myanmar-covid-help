@@ -10,13 +10,19 @@ const ServiceItemPage = ({ location }) => {
       <p className="service-address">{service.address}</p>
       <div className="service-phone">
         {service.phone &&
-          service.phone.map((ph, index) => (
-            <a href={`tel:${ph}`} key={index}>
-              &#128241; {ph}
-            </a>
-          ))}
+          service.phone.map((ph, index) =>
+            ph !== "" ? (
+              <a href={`tel:${ph}`} key={index}>
+                &#128241; {ph}
+              </a>
+            ) : (
+              ""
+            )
+          )}
       </div>
-      <p className="service-status">Current status: {service.status}</p>
+      <p className="service-status">
+        Current status: Available {/*service.status*/}
+      </p>
       <hr /> <br />
       <Link to="/" className="nav-link">
         &lt; Back to All Services

@@ -1,45 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import SearchIcon from "../../assets/images/Search.png";
+import Loading from "../../assets/images/Loading.gif";
+
+// Service Context Import
+import { ServicesContext } from "../context/ServicesContext";
 // Child Imports
 import ServicesList from "../ServicesList";
 
 const ServicesPage = () => {
-  const [services, setServices] = useState([
-    {
-      name: "Hello",
-      type: "Oxygen",
-      address: "Address 1",
-      township: "Township 1",
-      status: "Available",
-      phone: ["132424123", "1234123412"],
-    },
-    {
-      name: "Search Me",
-      type: "Teleconsultation",
-      address: "Address 2",
-      township: "Township 2",
-      status: "Waiting",
-      phone: ["132424123", "1234123412"],
-    },
-    {
-      name: "The last one",
-      type: "Other",
-      address:
-        "Address 3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt necessitatibus quasi labore cumque? Voluptates natus accusantium consequuntur corrupti alias ratione!",
-      township:
-        "Township 3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt necessitatibus quasi labore cumque? Voluptates natus accusantium consequuntur corrupti alias ratione!",
-      status: "Available",
-      phone: ["132424123", "1234123412"],
-    },
-    {
-      name: "မြန်မာလိုရေးကြည့်တာ",
-      type: "ကွန်စင်ထရေတာ",
-      address: "လှည်းကူး",
-      township: "လှည်းကူး",
-      status: "Available",
-      phone: ["132424123", "1234123412", "1234123412"],
-    },
-  ]);
+  const { isLoading, services } = useContext(ServicesContext);
 
   // useState for search
   const [searchTerm, setSearchTerm] = useState("");
@@ -63,6 +32,9 @@ const ServicesPage = () => {
     <>
       <h2 className="services-heading">
         <span>၀န်ဆောင်မှုများ</span>
+        {services && !isLoading && (
+          <span>၀န်ဆောင်မှုပေါင်း - {services.length} ခု</span>
+        )}
       </h2>
       <div className="search-container">
         <div className="search-item">
@@ -79,9 +51,16 @@ const ServicesPage = () => {
           />
         </div>
       </div>
-      <ServicesList
-        services={searchTerm.length < 1 ? services : searchResults}
-      />
+
+      {isLoading && (
+        <img src={Loading} alt="Fetching Data..." className="loading" />
+      )}
+
+      {services && !isLoading && (
+        <ServicesList
+          services={searchTerm.length < 1 ? services : searchResults}
+        />
+      )}
     </>
   );
 };

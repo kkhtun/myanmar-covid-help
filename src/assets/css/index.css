@@ -8,7 +8,8 @@
   justify-content: space-between;
   align-items: center;
 }
-.today > h2 span:last-child {
+.today > h2 span:last-child,
+.services-heading span:last-child {
   font-size: 60%;
   text-align: right;
   flex: 0 1 40%;
