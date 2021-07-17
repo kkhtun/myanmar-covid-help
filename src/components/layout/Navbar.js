@@ -3,7 +3,9 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="nav-container">
-      <h1>Myanmar COVID Help</h1>
+      <NavLink exact to="/" style={{ textDecoration: "none" }}>
+        <h1>Myanmar COVID Help</h1>
+      </NavLink>
       <div className="nav-links">
         <NavLink
           exact
