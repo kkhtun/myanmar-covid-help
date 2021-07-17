@@ -52,8 +52,10 @@
   border-left: 2px solid chartreuse;
   color: azure;
 }
-.service-item:hover {
-  box-shadow: 0 10px 15px rgba(41, 50, 79, 0.4);
+.service-item:hover,
+.service-item:focus {
+  box-shadow: 0 5px 10px rgba(41, 50, 79, 0.4);
+  background-color: rgb(41, 50, 79, 0.5);
 }
 .service-item-inner {
   padding: 0px 8px;

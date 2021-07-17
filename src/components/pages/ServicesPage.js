@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import SearchIcon from "../../assets/images/Search.png";
 import Loading from "../../assets/images/Loading.gif";
 
