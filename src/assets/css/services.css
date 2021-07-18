@@ -3,10 +3,10 @@
   margin-top: 2%;
   margin-bottom: 2%;
   display: flex;
+  flex-flow: row wrap;
   align-items: center;
   justify-content: center;
 }
-
 .search-item {
   background: #3c4352;
   border-radius: 10px;
@@ -25,6 +25,18 @@
   width: 20px;
 }
 
+.filter-type {
+  background: #3c4352;
+  border-radius: 10px;
+  padding: 1% 1%;
+  margin-right: 1%;
+}
+.filter-type select {
+  background: #3c4352;
+  border: none;
+  min-height: 1.5rem;
+  color: beige;
+}
 @media screen and (max-width: 1100px) {
   .search-item {
     padding: 1% 2%;
@@ -33,6 +45,7 @@
 @media screen and (max-width: 500px) {
   .search-item {
     padding: 2% 5%;
+    margin-top: 15px;
   }
 }
 

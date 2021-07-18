@@ -1,16 +1,35 @@
 import React, { useState, useContext } from "react";
-import SearchIcon from "../../assets/images/Search.png";
 import Loading from "../../assets/images/Loading.gif";
 
 // Service Context Import
 import { ServicesContext } from "../context/ServicesContext";
 // Child Imports
 import ServicesList from "../ServicesList";
+import ServicesSearch from "../ServicesSearch";
+// import ServicesFilterByType from "../ServicesFilterByType";
 
 const ServicesPage = () => {
   const { isLoading, services } = useContext(ServicesContext);
 
-  // useState for search
+  // for filter by type states
+  // const [onFilter, setOnFilter] = useState(false);
+  // const [filterTerm, setFilterTerm] = useState("");
+  // const [filterdResults, setFilteredResults] = useState(services);
+
+  // const handleFilterByType = (e) => {
+  //   setFilterTerm(e.target.value);
+  //   if (filterTerm === "") {
+  //     setFilteredResults(services);
+  //   } else {
+  //     const filteredList = services.filter(
+  //       (service) => service.type === filterTerm
+  //     );
+  //     console.log(filteredList);
+  //     setFilteredResults(filteredList);
+  //   }
+  // };
+
+  // useStates for search
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const handleSearch = (e) => {
@@ -28,6 +47,7 @@ const ServicesPage = () => {
       setSearchResults(services);
     }
   };
+
   return (
     <>
       <h2 className="services-heading">
@@ -37,19 +57,11 @@ const ServicesPage = () => {
         )}
       </h2>
       <div className="search-container">
-        <div className="search-item">
-          <span className="search-icon">
-            <img src={SearchIcon} alt="" />
-          </span>
-          <input
-            type="text"
-            name="search"
-            value={searchTerm}
-            onChange={handleSearch}
-            className="search-input"
-            placeholder="ရှာဖွေရန်..."
-          />
-        </div>
+        {/* <ServicesFilterByType
+        // handleFilterByType={handleFilterByType}
+        // filterTerm={filterTerm}
+        /> */}
+        <ServicesSearch searchTerm={searchTerm} handleSearch={handleSearch} />
       </div>
 
       {isLoading && (

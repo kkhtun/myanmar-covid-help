@@ -24,7 +24,7 @@ const ServiceItemPage = ({ location }) => {
         Current status: Available {/*service.status*/}
       </p>
       <hr /> <br />
-      <Link exact to="/" className="nav-link">
+      <Link to="/" className="nav-link">
         &lt; Back to All Services
       </Link>
     </div>
