@@ -3,7 +3,10 @@ import {
   ApiContextProvider,
   ChartContextProvider,
 } from "./components/context/ApiContext";
-import { ServicesContextProvider } from "./components/context/ServicesContext";
+import {
+  ServicesContextProvider,
+  ServiceTypesContextProvider,
+} from "./components/context/ServicesContext";
 import AppWithRoutes from "./AppWithRoutes";
 function App() {
   return (
@@ -11,7 +14,9 @@ function App() {
       <ApiContextProvider>
         <ChartContextProvider>
           <ServicesContextProvider>
-            <AppWithRoutes />
+            <ServiceTypesContextProvider>
+              <AppWithRoutes />
+            </ServiceTypesContextProvider>
           </ServicesContextProvider>
         </ChartContextProvider>
       </ApiContextProvider>

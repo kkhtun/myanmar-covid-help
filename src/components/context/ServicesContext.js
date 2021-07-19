@@ -22,3 +22,22 @@ export const ServicesContextProvider = ({ children }) => {
     </ServicesContext.Provider>
   );
 };
+
+export const ServiceTypesContext = createContext();
+
+export const ServiceTypesContextProvider = ({ children }) => {
+  const [types, setTypes] = useState([]);
+  useEffect(() => {
+    fetch("https://kkhtun.github.io/mmcovid-data/validation.json")
+      .then((res) => res.json())
+      .then((data) => {
+        setTypes(data);
+      })
+      .catch((err) => console.error(err));
+  }, []);
+  return (
+    <ServiceTypesContext.Provider value={{ types }}>
+      {children}
+    </ServiceTypesContext.Provider>
+  );
+};

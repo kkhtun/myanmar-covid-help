@@ -1,6 +1,6 @@
 import React from "react";
 import SearchIcon from "../assets/images/Search.png";
-const ServicesSearch = ({ searchTerm, handleSearch }) => {
+const ServicesSearch = ({ searchTerm, setSearchTerm }) => {
   return (
     <div className="search-item">
       <span className="search-icon">
@@ -10,9 +10,9 @@ const ServicesSearch = ({ searchTerm, handleSearch }) => {
         type="text"
         name="search"
         value={searchTerm}
-        onChange={handleSearch}
+        onChange={(e) => setSearchTerm(e.target.value)}
         className="search-input"
-        placeholder="ရှာဖွေရန်..."
+        placeholder="ရှာရန် (eg.မြို့နယ်၊ အောက်ဆီဂျင်)"
       />
     </div>
   );
